@@ -1,7 +1,7 @@
 import { db } from "@/lib/firebase/admin";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   const { email } = await req.json();
 
   if (!email || !email.includes("@")) {
