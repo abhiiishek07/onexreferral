@@ -27,6 +27,8 @@ const WaitlistForm = () => {
         toast.error("Oops! Something went wrong");
       }
     } catch (err) {
+      console.log("error in waitlist", err);
+
       toast.error("Oops! Something went wrong");
     } finally {
       setLoading(false);
