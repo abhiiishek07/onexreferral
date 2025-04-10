@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import { primary_font, secondary_font } from "@/lib/fonts";
 import Header from "@/components/layout/header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Bounce, ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "OneXReferral - One referral can change everything",
@@ -23,6 +24,19 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className={`antialiased`}>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
