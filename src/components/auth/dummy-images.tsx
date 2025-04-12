@@ -14,13 +14,18 @@ import Dummy8 from "/public/images/auth/dummy8.webp";
 import Dummy9 from "/public/images/auth/dummy9.webp";
 import Dummy10 from "/public/images/auth/dummy10.webp";
 
+/* TYPES */
 type infoBoxProps = {
   number: string;
   color: string;
   description: string;
 };
 
-const DummyImages = () => {
+type statsProps = {
+  stats: infoBoxProps[];
+};
+
+const DummyImages = ({ stats }: statsProps) => {
   const ImageBox = ({ image }: { image: StaticImageData }) => {
     return (
       <div className="h-[40vh] w-full relative rounded-lg">
@@ -41,7 +46,7 @@ const DummyImages = () => {
         className={`flex flex-col justify-end p-5 w-full ${props?.color} h-[40vh] rounded-lg`}
       >
         <h1 className="font-primary text-5xl text-white font-bold ">
-          {props?.number}%
+          {props?.number}
         </h1>
         <p className="font-secondary text-greyText  font-normal text-white/80">
           {props?.description}
@@ -61,31 +66,25 @@ const DummyImages = () => {
 
       <div className="col-span-1">
         <div className="flex flex-col gap-2 -mb-10 pt-2">
-          <InfoBox
-            color="bg-[#E65B3D]"
-            number="88"
-            description="of employers say referrals are the #1 source of quality hires"
-          />
-          <ImageBox image={Dummy4} /> <ImageBox image={Dummy1} />
+          <InfoBox {...stats[0]} />
+          <ImageBox image={Dummy4} />
+          <ImageBox image={Dummy1} />
         </div>
       </div>
 
       <div className="col-span-1">
-        <div className="flex flex-col gap-2 -mb-10 pt-2">
-          <ImageBox image={Dummy10} />{" "}
-          <InfoBox
-            color="bg-[#29B575]"
-            number="55"
-            description="faster hiring time via referrals vs job sites"
-          />
-          <ImageBox image={Dummy6} />{" "}
+        <div className="flex flex-col gap-2 -mt-20 pt-2">
+          <ImageBox image={Dummy10} />
+          <InfoBox {...stats[1]} />
+          <ImageBox image={Dummy6} />
         </div>
       </div>
 
       <div className="col-span-1">
         <div className="flex flex-col gap-2 -my-20 -mr-10 pt-2">
-          <ImageBox image={Dummy7} /> <ImageBox image={Dummy8} />{" "}
-          <ImageBox image={Dummy9} /> <ImageBox image={Dummy10} />
+          <ImageBox image={Dummy7} />
+          <ImageBox image={Dummy8} />
+          <ImageBox image={Dummy9} />
         </div>
       </div>
     </div>

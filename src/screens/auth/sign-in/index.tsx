@@ -1,13 +1,28 @@
 import DummyImages from "@/components/auth/dummy-images";
 import { Button } from "@/components/ui/button";
-import { Linkedin } from "lucide-react";
+import { Bot, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 const SignInScreen = () => {
   return (
     <section className="grid grid-cols-1 xl:grid-cols-3 gap-5 h-screen">
       {/* IMAGES */}
       <div className="col-span-2">
-        <DummyImages />
+        <DummyImages
+          stats={[
+            {
+              color: "bg-[#E65B3D]",
+              number: "88%",
+              description:
+                "of employers say referrals are the #1 source of quality hires",
+            },
+            {
+              color: "bg-[#29B575]",
+              number: "55%",
+              description: "faster hiring time via referrals vs job sites",
+            },
+          ]}
+        />
       </div>
 
       {/* LOGIN */}
@@ -19,24 +34,27 @@ const SignInScreen = () => {
               Sign in to continue
             </h1>
             <p className="text-lg text-muted-foreground mt-2">
-              Get referred to your dream job through real employees ✨
+              Whether you&apos;re seeking your next opportunity or helping
+              others land theirs — join the network that values genuine
+              referrals ✨
             </p>
           </div>
 
-          {/* Benefits */}
-          <ul className="text-base font-primary text-greyText font-normal space-y-2">
-            <li>
-              ✅ Referred candidates are 4 times more likely to be hired than
-              non-referred candidates.
-            </li>
-            <li>🚀 Fast-track your application with employee-backed trust</li>
-          </ul>
-
           {/* Sign In Button */}
-          <Button className="flex items-center gap-3 bg-[#0077B5] hover:bg-[#006097] text-white px-5 py-3 text-lg font-semibold transition-all w-full justify-center shadow-lg rounded-lg">
-            <Linkedin className="h-5 w-5" />
-            Sign in with LinkedIn
-          </Button>
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
+            <Link href="/join-as">
+              <Button className="flex items-center gap-3 bg-[#0077B5] hover:bg-[#006097] text-white px-5 py-3 text-base font-primary font-semibold transition-all w-full justify-center shadow-sm hover:shadow-md rounded-lg">
+                <Linkedin className="!h-5 !w-5" />
+                Sign in with LinkedIn
+              </Button>
+            </Link>{" "}
+            <Link href="/join-as">
+              <Button className="flex items-center gap-3 bg-white hover:bg-white/90 text-black border border-greyBorder  px-5 py-3 text-base font-primary font-semibold transition-all w-full justify-center shadow-sm hover:shadow-md  rounded-lg">
+                <Bot className="!h-6 !w-6" />
+                Continue as guest
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
