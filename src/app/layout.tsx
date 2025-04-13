@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+
+/*STYLES*/
 import "@/styles/globals.css";
 
 /* FONTS */
 import { primary_font, secondary_font } from "@/lib/fonts";
-import Header from "@/components/layout/header";
+
+/*COMPONENTS*/
 import { ThemeProvider } from "@/components/theme-provider";
 import { Bounce, ToastContainer } from "react-toastify";
 
@@ -42,7 +45,6 @@ export default function RootLayout({
           defaultTheme="light"
           disableTransitionOnChange
         >
-          <Header />
           <main>{children}</main>
         </ThemeProvider>
       </body>
