@@ -9,13 +9,13 @@ const JoinAsScreen = () => {
         <DummyImages
           stats={[
             {
-              color: "bg-[#1E3A8A]", // New deep blue
+              color: "bg-[#BACB51]",
               number: "85%",
               description:
                 "of jobs are filled through networking and referrals — not online applications.",
             },
             {
-              color: "bg-[#F97316]", // New vibrant orange
+              color: "bg-[#EF51C9]",
               number: "50%",
               description:
                 "of referred hires stay at the company longer than 3 years.",
@@ -33,13 +33,13 @@ const JoinAsScreen = () => {
 
           <div className="grid grid-cols-1 xl:grid-cols-1 gap-5">
             <Link href="/candidate/referrals">
-              <div className="flex items-center gap-3 bg-primary text-white px-5 py-3 text-base font-primary font-semibold transition-all w-full justify-center shadow-sm hover:shadow-md rounded-lg cursor-pointer">
+              <div className="flex items-center gap-3 bg-primary text-white px-5 py-5 text-lg font-primary font-semibold transition-all w-full justify-center shadow-sm hover:shadow-md rounded-lg cursor-pointer">
                 Get referrals (Join as candidate)
               </div>
             </Link>
 
             <Link href="/referrer/dashboard">
-              <div className="flex items-center gap-3 bg-white hover:bg-white/90 text-black border border-greyBorder px-5 py-3 text-base font-primary font-semibold transition-all w-full justify-center shadow-sm hover:shadow-md rounded-lg cursor-pointer">
+              <div className="flex items-center gap-3 bg-white hover:bg-white/90 text-black border border-greyBorder px-5 py-5 text-lg font-primary font-semibold transition-all w-full justify-center shadow-sm hover:shadow-md rounded-lg cursor-pointer">
                 Share referrals (Join as referrer)
               </div>
             </Link>

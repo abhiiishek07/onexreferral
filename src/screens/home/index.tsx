@@ -49,7 +49,7 @@ const HomeScreen = () => {
                 🚀 Coming Soon
               </p>
               <p className="text-md md:text-lg text-gray-800 dark:text-gray-200 mt-4 font-secondary">
-                <span className="font-semibold text-black dark:text-white font-primary">
+                <span className="font-bold text-black dark:text-white font-primary text-lg">
                   OneXReferral
                 </span>{" "}
                 is your go-to platform for getting and sharing job referrals

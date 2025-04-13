@@ -1,7 +1,15 @@
+/* NEXT JS IMPORTS*/
 import type { Metadata } from "next";
 
 /*COMPONENTS*/
 import Header from "@/components/layout/header";
+import { ThemeProvider } from "@/components/theme-provider";
+
+/* PACKAGES */
+import { Bounce, ToastContainer } from "react-toastify";
+
+/*FONTS */
+import { primary_font, secondary_font } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "OneXReferral - One referral can change everything",
@@ -14,10 +22,33 @@ export default function PublicLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <Header />
-        <main>{children}</main>
+    <html
+      lang="en"
+      className={`${primary_font} ${secondary_font}`}
+      suppressHydrationWarning
+    >
+      <body className={`antialiased`}>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          disableTransitionOnChange
+        >
+          <Header />
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 import React from "react";
 
 const Header = () => {
@@ -21,13 +22,21 @@ const Header = () => {
           <h1 className="font-primary text-xl lg:text-2xl xl:text-4xl font-bold">
             OneX<span className="italic">Referral</span>
           </h1>
-          <Button variant="ghost" onClick={handleTheme}>
-            {theme === "dark" ? (
-              <Sun className="!h-5 !w-5 transition-all duration-300 ease-in-out" />
-            ) : (
-              <Moon className="!h-5 !w-5 transition-all duration-300 ease-in-out" />
-            )}
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" onClick={handleTheme}>
+              {theme === "dark" ? (
+                <Sun className="!h-5 !w-5 transition-all duration-300 ease-in-out" />
+              ) : (
+                <Moon className="!h-5 !w-5 transition-all duration-300 ease-in-out" />
+              )}
+            </Button>
+            <Link href="/sign-in">
+              {" "}
+              <Button className="bg-primary text-white font-primary text-base font-semibold">
+                Sign In
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </header>
