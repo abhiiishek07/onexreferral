@@ -67,7 +67,7 @@ const DummyImages = ({ stats }: statsProps) => {
       <div className="col-span-1">
         <div className="flex flex-col gap-2 -mb-10 pt-2">
           <InfoBox {...stats[0]} />
-          <ImageBox image={Dummy4} />
+          <ImageBox image={Dummy9} />
           <ImageBox image={Dummy1} />
         </div>
       </div>
@@ -81,10 +81,10 @@ const DummyImages = ({ stats }: statsProps) => {
       </div>
 
       <div className="col-span-1">
-        <div className="flex flex-col gap-2 -my-20 -mr-10 pt-2">
+        <div className="flex flex-col gap-2 -mt-8 -mr-10 pt-2">
           <ImageBox image={Dummy7} />
           <ImageBox image={Dummy8} />
-          <ImageBox image={Dummy9} />
+          <ImageBox image={Dummy4} />
         </div>
       </div>
     </div>
